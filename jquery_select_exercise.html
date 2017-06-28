@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Demo</title>
+	<script type="text/javascript" src="./lib/jquery-2.1.4.min.js"></script> <!-- src could be a link to the cdn, too, e.g. https://code.jquery.com/jquery-2.1.4.js -->
+</head>
+<body>
+<div>Div 1</div>
+<div class="higlight">Div 2</div>
+<div id="third">Div 3</div>
+<div class="higlight">Div 4</div>
+
+
+<script>
+$('div').css('background', 'purple');
+$('.higlight').css('width', '200px');
+$('#third').css('border', '1px solid orange');
+$('div:first-child').css('color', 'pink');
+</script>
+
+</body>
+</html>
