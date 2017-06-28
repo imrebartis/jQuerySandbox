@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Demo</title>
+	<script type="text/javascript" src="./lib/jquery-2.1.4.min.js"></script> <!-- src could be a link to the cdn, too, e.g. https://code.jquery.com/jquery-2.1.4.js -->
+</head>
+<body>
+
+<h1>jQuery Demo!</h1>
+
+
+<ul>
+	<li>Newt</li>
+	<li>Howler Monkey <a href="http://monkey.com">Monkey.com</a></li>
+	<li id="adorable">Pine Marten</li>
+</ul>
+
+<a href="https://google.com">Google</a>
+
+<script>
+// Changing the style of the h1 in jQuery:
+// $('h1').css('color', 'green');
+
+// Same thing in plain JS:
+// document.querySelector('h1').style.color = "green";
+
+var styles = {
+	color: 'red',
+	background: 'green',
+	border: '2px solid purple'
+} 
+
+$('h1').css(styles); //this modification would need 3 lines of code in plain JS
+$('li').css('color', '#BADA55'); //in plain JS we'd need to loop thru the list items in order to do this, see below
+
+var lis = document.querySelectorAll('li');
+for (var i=0; i <lis.length; i++){
+	lis[i].style.color = 'green';
+}
+
+$('a').css('font-size', '30px') // in plain JS this would be fontSize
+
+</script>
+
+</body>
+</html>
