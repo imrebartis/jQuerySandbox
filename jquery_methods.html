@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Methods Demo</title>
+	<script type="text/javascript" src="./lib/jquery-2.1.4.min.js"></script> <!-- src could be a link to the cdn, too, e.g. https://code.jquery.com/jquery-2.1.4.js -->
+</head>
+<body>
+<input type="text" placeholder="your name">
+<h1>jQuery Methods Demo</h1>
+<ul>
+	<li>Skittles</li>
+	<li>Starburst</li>
+	<li>Twix</li>
+</ul>
+
+
+<script>
+
+// text() works like textContent in JS, i.e. it selects the text content of the html element
+console.log($('h1').text())
+console.log($('li').text()) // this returns a string: "SkittlesStarburstTwix"
+//we can also change the text of the element with text():
+$('h1').text('hurdegurde')
+$('li').text('murde') //this will change all the lis into 'murde'
+
+//html() works like innerHTML in JS:
+console.log($('ul').html()) //this will print out the html elements as well, not only the text content (just like innerHTML)
+$('li:first-child').html('❤️')
+</script>
+
+</body>
+</html>
