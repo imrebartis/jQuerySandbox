@@ -5,13 +5,21 @@
 	<script type="text/javascript" src="./lib/jquery-2.1.4.min.js"></script> <!-- src could be a link to the cdn, too, e.g. https://code.jquery.com/jquery-2.1.4.js -->
 </head>
 <body>
-<input type="text" placeholder="your name">
 <h1>jQuery Methods Demo</h1>
+<input type="text" placeholder="your name">
+<select>
+	<option>Ostrich</option>
+	<option>Turtle</option>
+	<option>Parrot</option>
+</select>
 <ul>
 	<li>Skittles</li>
 	<li>Starburst</li>
 	<li>Twix</li>
 </ul>
+<img src="http://i.imgur.com/zvANQeG.jpg">
+<img src="http://i.imgur.com/zvANQeG.jpg">
+<img src="http://i.imgur.com/zvANQeG.jpg">
 
 
 <script>
@@ -26,6 +34,20 @@ $('li').text('murde') //this will change all the lis into 'murde'
 //html() works like innerHTML in JS:
 console.log($('ul').html()) //this will print out the html elements as well, not only the text content (just like innerHTML)
 $('li:first-child').html('❤️')
+$('img').css('width', '20%')
+
+//attr() works like setAttribute in JS:
+$('img').attr('src', 'http://www.countryfile.com/sites/default/files/uploads/2015/08/iStock_000010014197_Medium.jpg');
+$('img:first-of-type').attr('src', 'http://i.imgur.com/zvANQeG.jpg')
+$('img:last-of-type').attr('src', 'http://i.imgur.com/zvANQeG.jpg')
+//$('input').attr('type', 'color');
+
+//val() = value() in JS:
+console.log($('input').val()) //this doesn't do anything, since val is "" for the moment
+$('input').val("pine marten") //this replaces "" with "pine marten"
+console.log($('select').val()) //this will print out Ostrich, since that's the default option
+
+
 </script>
 
 </body>
