@@ -2,6 +2,19 @@
 <html>
 <head>
 	<title>jQuery Methods Demo</title>
+	<style type="text/css">
+		.correct {
+			color: green;
+		}
+		.wrong {
+			color: red;
+			background: #BADA55;
+		}
+		.done {
+			color: grey;
+			text-decoration: line-through;
+		}
+	</style>
 	<script type="text/javascript" src="./lib/jquery-2.1.4.min.js"></script> <!-- src could be a link to the cdn, too, e.g. https://code.jquery.com/jquery-2.1.4.js -->
 </head>
 <body>
@@ -47,6 +60,14 @@ console.log($('input').val()) //this doesn't do anything, since val is "" for th
 $('input').val("pine marten") //this replaces "" with "pine marten"
 console.log($('select').val()) //this will print out Ostrich, since that's the default option
 
+//using addClass(), removeClass() and toggleClass(), similar to .classList.add(), .classList.remove() and .classList.toggle() in plain JS
+$("h1").addClass("correct")
+$("h1").removeClass("correct")
+$('li').addClass('wrong') //in plain JS we'd need to use first e.g. querySelectorAll() and then loop thru each li to add .wrong
+$('li').toggleClass('wrong') //removes .wrong
+$('li').addClass('wrong') // adds .wrong
+$('li:first-of-type').toggleClass('done')
+$('li').toggleClass('done') // adds .done to the 2nd and 3rd li only, since the first one had previously had .done
 
 </script>
 
