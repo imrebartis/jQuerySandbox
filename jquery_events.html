@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Events</title>
+		<script type="text/javascript" src="./lib/jquery-2.1.4.min.js"></script> <!-- src could be a link to the cdn, too, e.g. https://code.jquery.com/jquery-2.1.4.js -->
+	</head>
+ <body>
+	<h1>jQuery Events</h1>
+	<button>Don't click me</button>
+	<button>Seriously, don't</button>
+	<button>This is your last warning</button>
+ </body>
+ <script type="text/javascript">
+ 	$('button').click(function(){ //in plain JS we'd have to querySelectorAll, then do a foreach loop and then add to each button individually an event listener
+ 		var text = $(this).text();
+ 		$(this).css('background', 'lightgreen') // in plain JS this would be this.css('background', 'lightgreen')
+ 		console.log('you clicked ' + text)
+ 	})
+ </script>
+</html>
