@@ -6,6 +6,7 @@
 	</head>
  <body>
 	<h1>jQuery Events</h1>
+	<input type="text">
 	<button>Don't click me</button>
 	<button>Seriously, don't</button>
 	<button>This is your last warning</button>
@@ -15,6 +16,25 @@
  		var text = $(this).text();
  		$(this).css('background', 'lightgreen') // in plain JS this would be this.css('background', 'lightgreen')
  		console.log('you clicked ' + text)
+ 	})
+ 	$('input').keypress(function(event){
+ 		if(event.which === 13) {// = if user hits enter, see http://keycode.info/ for keycodes
+ 			alert('you hit enter')
+ 		}
+ 	})
+ 	$('h1').on('click', function(){
+ 		$(this).css('color', "turquoise") // it's better to use 'this' than 'h1' if u happen to have more h1s on your page
+ 	})
+
+ 	$('input').on('keypress', function(){
+ 		console.log('key pressed')
+ 	})	
+
+ 	$('button').on('mouseenter', function(){ //mouseenter gets triggered when hovering over element
+ 		$(this).css('font-weight', 'bold')
+ 	})	
+ 	$('button').on('mouseleave', function(){ //mouseleave together with mousenter used e.g. for toggling an effect (here bold/normal)
+ 		$(this).css('font-weight', 'normal')
  	})
  </script>
 </html>
