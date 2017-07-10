@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Effects</title>
+		<script type="text/javascript" src="./lib/jquery-2.1.4.min.js"></script> <!-- src could be a link to the cdn, too, e.g. https://code.jquery.com/jquery-2.1.4.js -->
+		<style type="text/css">
+			div, section {
+				height: 250px;
+				width: 250px;
+				background: #BADA55;
+				float: left;
+				margin: 20px;
+			}
+
+			section {
+				background: lightgreen;
+			}
+		</style>
+	</head>
+ <body>
+	<div>Fade away</div>
+	<div>Fadingo</div>
+	<div>Fadiho</div>
+	<section>One</section>
+	<section>Two</section>
+
+
+	<button id="first-button">Click me</button>
+	<button id="second-button">No, click me</button>
+	<button id="third-button">No, click me-me-me</button>
+ </body>
+ <script type="text/javascript">
+ 	$('#first-button').on('click', function(){ 
+ 		$('div').fadeOut(1000, function(){ //we add the console log as a callback function, otherwise the message will be displayed before the fade out has been completed
+ 			console.log('Fade out completed');
+ 			$(this).remove(); //this will delete the divs after the fade out has been completed
+ 		})
+ 	})
+ 	$('#second-button').on('click', function(){ 
+ 		$('section').fadeToggle(1000)
+ 	})
+ 	$('#third-button').on('click', function(){ 
+ 		$('section').slideToggle(1000, function(){ //slideDown & slideUp
+ 		console.log('Fade out completed');
+ 		$(this).remove(); //this will delete the sections after the slide has been completed
+ 	  })
+ 	})
+ </script>
+</html>
